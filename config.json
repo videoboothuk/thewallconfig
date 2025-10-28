@@ -1,0 +1,378 @@
+{
+  "budget": 100,
+  "timeSeconds": 420,
+  "maxPerformance": {
+    "cornering": 60,
+    "speed": 60,
+    "reliability": 60
+  },
+  "basePerformance": {
+    "cornering": 5,
+    "speed": 10,
+    "reliability": 2
+  },
+  "aerodynamicsModyfier": {
+    "influencedParameters": {
+      "cornering": 5,
+      "speed": 0,
+      "reliability": 0
+    },
+    "stepCost": 5,
+    "stepPoints": 0.01
+  },
+  "powerUnitModyfier": {
+    "influencedParameters": {
+      "cornering": 0,
+      "speed": 4,
+      "reliability": 0
+    },
+    "stepCost": 5,
+    "stepPoints": 0.01
+  },
+  "reliabilityModyfier": {
+    "influencedParameters": {
+      "cornering": 0,
+      "speed": 0,
+      "reliability": 3
+    },
+    "stepCost": 5,
+    "stepPoints": 0
+  },
+  "driverRookie": {
+    "cost": 5,
+    "points": 0.5
+  },
+  "driverMid": {
+    "cost": 15,
+    "points": 1
+  },
+  "driverStar": {
+    "cost": 25,
+    "points": 2
+  },
+  "opsLow": {
+    "cost": 10,
+    "points": 0
+  },
+  "opsMid": {
+    "cost": 20,
+    "points": 0.5
+  },
+  "opsHigh": {
+    "cost": 30,
+    "points": 1
+  },
+  "scenarios": [
+    {
+      "events": [
+        {
+          "name": "The Race Start",
+          "desc": "It’s time for the race start! The track is damp, but the rain has stopped. Should we risk it and go for the dry tyres, or play it safe and take intermediates?",
+          "strategies": [
+            {
+              "name": "Dry Tyres",
+              "desc": "Gamble on grip and go for early pace.",
+              "overview": "Choosing dry tyres on a damp surface could pay off big — if the track dries quickly, you’ll be flying while others struggle. But in the early laps, grip will be minimal, and one mistake could ruin your race before it begins.",
+              "tags": [
+                "RiskyStart",
+                "HighReward",
+                "GripChallenge",
+                "BoldStrategy"
+              ],
+              "rewards": [
+                "Early advantage as the track dries",
+                "Possible lead gains after Lap 5",
+                "Reduced pit time later"
+              ],
+              "risks": [
+                "Poor grip at start",
+                "Higher chance of spin",
+                "Potential early damage or loss of positions"
+              ],
+              "outcomes": [
+                {
+                  "desc": "Rapid pace in mid-stint earns major track position.",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Undercut opponents who pit for slicks later.",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Gain early lead and clear air advantage.",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Lose control on Lap 1 and drop down the field.",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Cold tyres cause slow getaway and lost positions.",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Minor front wing damage after sliding off line.",
+                  "isPositive": false
+                }
+              ],
+              "points": 4
+            },
+            {
+              "name": "Intermediate Tyres",
+              "desc": "Play it safe and hold steady until the track fully dries.",
+              "overview": "Intermediates provide confidence and stability in the early laps but may quickly overheat as the track dries. You’ll need to time the switch to slicks perfectly to avoid falling behind.",
+              "tags": [
+                "SafeChoice",
+                "EarlyGrip",
+                "Consistency",
+                "TireManagement"
+              ],
+              "rewards": [
+                "Secure start with fewer mistakes",
+                "Good early control",
+                "Reliable performance in traffic"
+              ],
+              "risks": [
+                "Tyres degrade fast on dry surface",
+                "Forced early pit stop",
+                "Loss of time during switch"
+              ],
+              "outcomes": [
+                {
+                  "desc": "Steady first stint keeps you in the fight",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Avoid early incidents as others struggle",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Perfect switch to slicks during safety car",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Lose pace rapidly as track dries",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Forced into early pit and rejoin in traffic",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Overheat tyres and slide in key corners",
+                  "isPositive": false
+                }
+              ],
+              "points": 2
+            }
+          ]
+        },
+        {
+          "name": "Mid-Race Duel",
+          "desc": "We’re halfway through the race, and all on dry tyres now. We have a car close behind, and few close ahead. Is the car capable of pushing to overtake? Or should we try to defend?",
+          "strategies": [
+            {
+              "name": "Push",
+              "desc": "Attack mode - risk it all for the overtake",
+              "overview": "You decide to push hard and try to overtake the car ahead. It’s high-risk, high-reward — perfect execution could mean a jump up the order, but overcooking it could ruin your tyres or worse",
+              "tags": [
+                "Aggression",
+                "HighRisk",
+                "Momentum",
+                "TireWear"
+              ],
+              "rewards": [
+                "Gain a position",
+                "Energize the team",
+                "Psychological boost"
+              ],
+              "risks": [
+                "Overheating tyres",
+                "Loss of grip",
+                "Potential collision"
+              ],
+              "outcomes": [
+                {
+                  "desc": "Clean overtake and improved track position",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Set fastest lap and close on next rival",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Build momentum, morale, and crowd reaction",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Lock-up leads to flat spot and lost pace",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Contact with rival — minor damage",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Spin after pushing beyond grip limit",
+                  "isPositive": false
+                }
+              ],
+              "points": 2
+            },
+            {
+              "name": "Defend",
+              "desc": "Keep it clean, protect the position",
+              "overview": "You opt to hold your ground, conserving tyres and waiting for the race to come to you. This choice is about patience and precision — you may lose pace, but you’ll have more grip for the final laps",
+              "tags": [
+                "Defense",
+                "Tire Save",
+                "Strategy Play",
+                "Consistency"
+              ],
+              "rewards": [
+                "Protects current position",
+                "Better tyre life",
+                "Fewer risks"
+              ],
+              "risks": [
+                "Lose touch with cars ahead",
+                "Increased pressure from behind",
+                "Mental fatigue from defending"
+              ],
+              "outcomes": [
+                {
+                  "desc": "Hold off rivals and maintain steady position",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Stronger tyre condition for the final stint",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Force opponents into mistakes behind you",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Lose DRS train and time to leaders",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Get overtaken by a faster rival",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Defensive driving overheats tyres anyway",
+                  "isPositive": false
+                }
+              ],
+              "points": 4
+            }
+          ]
+        },
+        {
+          "name": "The Final Stint",
+          "desc": "The dry tyres are starting to wear quite badly, but we still have 10 laps to go. Should we pit for another set, or stay out?",
+          "strategies": [
+            {
+              "name": "Pit",
+              "desc": "Fresh rubber, fresh hope",
+              "overview": "You dive into the pits for a new set of tyres. The fresh grip could make you a rocket in the closing laps — if the time lost in the stop doesn’t cost you too much track position",
+              "tags": [
+                "Fresh Tyres",
+                "Undercut",
+                "Late Charge",
+                "Pit Strategy"
+              ],
+              "rewards": [
+                "Huge pace advantage",
+                "Potential fastest laps",
+                "Strong finish if traffic is clear"
+              ],
+              "risks": [
+                "Lose positions during pit stop",
+                "Rejoin in heavy traffic",
+                "Pit crew error risk"
+              ],
+              "outcomes": [
+                {
+                  "desc": "Overcut rivals and finish on the podium",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Fresh tyres enable rapid late charge",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Set fastest lap and earn bonus points",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Slow pit stop ruins momentum",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Rejoin in traffic and lose time overtaking",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Safety car cancels out your tyre advantage",
+                  "isPositive": false
+                }
+              ],
+              "points": 4
+            },
+            {
+              "name": "Stay out",
+              "desc": "Brave it — hang on till the end",
+              "overview": "You choose to stay out, saving the pit time but pushing worn tyres to their limits. If you manage them well, you could pull off a miracle — or lose it all in the final laps",
+              "tags": [
+                "Endurance",
+                "Risk Management",
+                "Gamble",
+                "Tire Wear"
+              ],
+              "rewards": [
+                "Maintain track position",
+                "Potential win with good defence",
+                "Heroic finish"
+              ],
+              "risks": [
+                "Severe tyre degradation",
+                "Huge pace loss",
+                "Risk of blowout"
+              ],
+              "outcomes": [
+                {
+                  "desc": "Hold off chasing cars for strong finish",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Nail tyre management and save podium spot",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Strategic gamble pays off with race win",
+                  "isPositive": true
+                },
+                {
+                  "desc": "Tyres hit the cliff and lose grip completely",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Get overtaken multiple times in closing laps",
+                  "isPositive": false
+                },
+                {
+                  "desc": "Late puncture destroys race result",
+                  "isPositive": false
+                }
+              ],
+              "points": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "hiddenPoints": 0
+}
